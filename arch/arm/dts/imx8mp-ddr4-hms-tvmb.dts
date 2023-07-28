@@ -1,0 +1,26 @@
+#include "imx8mp-ddr4-evk.dts"
+
+&usdhc2 {
+	///delete-property/ cd-gpios;
+	//cd-gpios = <&gpio2 12 GPIO_ACTIVE_HIGH>;
+};
+
+
+&iomuxc {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_tvmb_gpio>;
+	pinctrl_tvmb_gpio: tvmb_gpio {
+		fsl,pins = <
+			MX8MP_IOMUXC_SPDIF_TX__GPIO5_IO03        	0x1c3
+			//MX8MP_IOMUXC_ECSPI1_SS0__GPIO5_IO09        	0x1c3
+        >;
+    };
+
+	pinctrl_tvmb_lcd: lcd_gpio {
+		fsl,pins = <
+			MX8MP_IOMUXC_SAI3_RXFS__GPIO4_IO28        	0x1c3
+			MX8MP_IOMUXC_SAI2_RXC__GPIO4_IO22        	0x1c3
+			//MX8MP_IOMUXC_ECSPI1_SS0__GPIO5_IO09        	0x1c3
+        >;
+    };
+};

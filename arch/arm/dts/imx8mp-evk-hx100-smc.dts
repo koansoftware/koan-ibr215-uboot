@@ -1,0 +1,11 @@
+#include "imx8mp-evk.dts"
+
+&usdhc2 {
+	/delete-property/ pinctrl-names; 
+	pinctrl-names = "default";
+	/delete-property/ pinctrl-0; 
+	/delete-property/ pinctrl-1; 
+	/delete-property/ pinctrl-2; 
+	pinctrl-0 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
+};
+
